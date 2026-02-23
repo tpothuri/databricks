@@ -1,0 +1,4 @@
+boto3                 # To interact with your S3 buckets and Lambda
+requests              # To fetch data from the Open APIs (CSV, Images, JSON)
+python-dotenv         # To handle your AWS keys locally (if not using CLI profiles)
+pillow                # To handle/verify image data before uploading to S3
