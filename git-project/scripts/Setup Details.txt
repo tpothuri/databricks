@@ -1,0 +1,67 @@
+AWS-Databricks End-to-End Data Engineering Project
+
+Phase 1: Setup Your Tools
+-> Install AWS CLI: Download and install.
+-> Install Terraform: Download the binary and add it to your system's PATH.
+
+Configure AWS Credentials:
+-> Log into your AWS Console.
+-> Go to IAM > Users > Your User > Security Credentials.
+-> Click Create access key (choose "Command Line Interface").
+-> Open your terminal and run: aws configure
+-> Enter your Access Key ID, Secret Access Key, and set your region to us-east-1.
+
+Creating venv :
+1. Create the Virtual Environment
+# Create the environment (naming it 'venv' is standard)
+python -m venv aws_venv
+
+# Activate it:
+# If you are on Windows:
+aws_venv\Scripts\activate
+
+# If you are on Mac/Linux:
+source aws_venv/bin/activate
+
+2. Create a requirements.txt File
+boto3==1.34.0         # AWS SDK for Python (S3/Lambda)
+requests==2.31.0      # To fetch data from Open APIs
+pandas==2.1.0         # For quick data manipulation before uploading
+pyspark==3.5.0        # For local testing of your logic before Databricks
+python-dotenv==1.0.0  # To manage environment variables safely
+
+3. Install the Libraries
+pip install --upgrade pip
+pip install -r requirements.txt
+
+4. Update your .gitignore (to ensure aws_env doesn't get pushed to GitHub)
+# Local virtual environment
+aws_env/
+__pycache__/
+
+# Terraform
+.terraform/
+*.tfstate*
+
+Connect to AWS using keys:
+-> Open your terminal and run: aws configure
+-> Enter your Access Key ID, Secret Access Key, and set your region to us-east-1.
+
+#####
+
+Running terraform file to setup aws buckets and iam policies
+Step 1: The Terraform Configuration (main.tf)
+Step 2: Execution Commands (Open your terminal (ensure aws_env is active) and execute these commands:)
+-> 1. Initialize Terraform: terraform init (This will install the AWS provider and set up the hidden .terraform directory.)
+-> 2. Validate Configuration: terraform validate  (this checks your syntax before attempting to connect to AWS.)
+-> 3. Generate an Execution Plan: terraform plan -out=main.tfplan (This creates a plan file. Review the output to ensure 5 resources are being added.)
+-> 4. Apply the Plan: terraform apply "main.tfplan"
+Step 3: Verification : 
+-> aws s3 ls  (Once complete, run this AWS CLI command to verify your buckets)
+
+
+
+
+
+
+
