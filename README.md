@@ -1,5 +1,8 @@
 # 🦠 COVID-19 Global Health Intelligence — End-to-End Data Engineering with Databricks
-**AWS S3 | Databricks Lakehouse | PySpark | Medallion Architecture**
+[![AWS](https://img.shields.io/badge/AWS-S3-FF9900?logo=amazons3&logoColor=white)](https://aws.amazon.com/)
+[![Databricks](https://img.shields.io/badge/Databricks-Lakehouse-FF3621?logo=databricks&logoColor=white)](https://databricks.com/)
+[![PySpark](https://img.shields.io/badge/PySpark-Transformation-E25A1C?logo=apachespark&logoColor=white)](https://spark.apache.org/docs/latest/api/python/)
+[![Power BI](https://img.shields.io/badge/Power%20BI-Analytics-F2C811?logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 
 ## 📌 Project Overview
 **COVID-19 Global Health Intelligence** is a production-grade data engineering solution that synchronizes global vaccination rollouts with infection trends. The project utilizes a **hybrid architecture**, leveraging **AWS S3** for raw data storage (Bronze) and **Databricks** for sophisticated transformation (Silver) and analytical serving (Gold). 
@@ -43,6 +46,13 @@ The final stage of the pipeline is a high-performance **Power BI Dashboard** con
 
 ---
 
+## 📊 Business Impact
+* **Stakeholder Trust**: Proactively addressed administrative reporting anomalies (104.2% coverage) via **Dynamic DAX Narratives**, building trust in the underlying data integrity.
+* **Operational Agility**: Transitioned from manual tracking to an automated **S3-to-Databricks** pipeline, significantly reducing data latency.
+* **Unbiased Analytics**: Normalized regional data to a **"Per 100k"** metric, enabling accurate "apples-to-apples" comparison across diverse nations.
+
+---
+
 ## ⚠️ Engineering Challenges & Solutions
 
 ### **1. The "Brand Fan-out" Inflation**
@@ -52,6 +62,13 @@ The final stage of the pipeline is a high-performance **Power BI Dashboard** con
 ### **2. Administrative Data Anomalies**
 * **Challenge**: Initial ingestion showed a **104.2% population coverage**, a common anomaly in public health caused by census lags during mass rollouts.
 * **Solution**: Validated the anomaly through a Silver-layer audit. Instead of removing data, I adjusted the **Population Immunity Gauge** axis to **1.10** and implemented smart narratives to explain the administrative surplus to stakeholders.
+
+---
+
+## ⭐ Future Enhancements
+* **Real-time Streaming**: Transitioning to **Databricks Structured Streaming** for live situational awareness.
+* **Predictive Modeling**: Integrating **MLflow** to forecast future infection waves based on current vaccination velocity.
+* **Enhanced Governance**: Implementing fine-grained access control using **Unity Catalog** for sensitive health metrics.
 
 ---
 
